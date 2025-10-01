@@ -1,0 +1,411 @@
+/* 0. RESET E VARIÁVEIS BÁSICAS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #007bff;
+    /* Azul vibrante */
+    --secondary-color: #6c757d;
+    /* Cinza para texto secundário */
+    --text-color: #333;
+    --bg-color-light: #f8f9fa;
+    --bg-color-dark: #343a40;
+    --white: #fff;
+    --font-sans: 'Arial', sans-serif;
+    --padding-lg: 80px 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: var(--padding-lg);
+}
+
+.dark-section {
+    background-color: var(--bg-color-dark);
+    color: var(--white);
+}
+
+.dark-section h2,
+.dark-section p {
+    color: var(--white);
+}
+
+/* 1. ESTILOS DO CABEÇALHO/NAVEGAÇÃO */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    /* Tom mais escuro do azul */
+}
+
+/* 2. SEÇÃO HERO */
+.hero {
+    background: var(--bg-color-light);
+    padding: 100px 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text .greeting {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.hero-text h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
+
+/* 3. SEÇÃO PROJETOS */
+#projetos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.projeto-card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.projeto-card h3 {
+    padding: 15px 15px 5px;
+}
+
+.projeto-card p {
+    padding: 0 15px 10px;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+.tecnologias {
+    padding: 0 15px 15px;
+}
+
+.tecnologias span {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.project-links a {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+}
+
+.link-demo {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.link-demo:hover {
+    background-color: #0056b3;
+}
+
+.link-github {
+    color: var(--text-color);
+    border: 1px solid #ccc;
+}
+
+.link-github:hover {
+    background-color: #f1f1f1;
+}
+
+/* 4. SEÇÃO HABILIDADES */
+#habilidades h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-item {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    text-align: center;
+    transition: opacity 0.3s;
+}
+
+.skill-item:hover {
+    opacity: 0.8;
+}
+
+/* 5. SEÇÃO SOBRE MIM */
+.about-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#sobre h2 {
+    margin-bottom: 20px;
+}
+
+#sobre p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.secondary-cta {
+    background-color: var(--secondary-color);
+}
+
+.secondary-cta:hover {
+    background-color: #5a6268;
+}
+
+/* 6. SEÇÃO CONTATO */
+#contato h2,
+#contato p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#contact-form textarea {
+    resize: vertical;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
+.section-padding a {
+    text-decoration: none;
+}
+
+/* 7. RODAPÉ */
+footer {
+    background-color: #212529;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* 8. RESPONSIVIDADE (MOBILE FIRST) */
+@media (max-width: 768px) {
+
+    /* Ajustes Gerais */
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    /* Header/Nav */
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-content h1 {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px 10px;
+    }
+
+    nav a {
+        margin-left: 0;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        order: 2;
+        /* Move o texto para baixo no mobile */
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 20px;
+        order: 1;
+        /* Move a foto para cima no mobile */
+    }
+
+    .hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Projetos */
+    .projetos-grid {
+        grid-template-columns: 1fr;
+        /* Uma coluna no mobile */
+    }
+}
